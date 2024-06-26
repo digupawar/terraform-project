@@ -35,3 +35,6 @@ Import successful!
 The resources that were imported are shown above. These resources are now in
 your Terraform state and will henceforth be managed by Terraform.
 -----------------------------------------------------------------------------------------------------------------------
+
+We can perform Import like below as well.
+https://github.com/zealvora/terraform-beginner-to-advanced-resource/blob/master/Section%205%20-%20Remote%20State%20Management/tf-import.md
