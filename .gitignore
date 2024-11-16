@@ -1,0 +1,13 @@
+# Ignore Terraform state files and backups
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ignore Terraform lock file (if you don't want to track it)
+.terraform.lock.hcl
+
+# Ignore the .terraform directory (which contains provider plugins)
+.terraform/
+
+# Optional: Ignore crash log files
+crash.log
+

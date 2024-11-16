@@ -1,0 +1,37 @@
+1. First write a import block like this
+import.tf
+--------------------------------------------------------
+provider "aws" {}
+
+import {
+  to = aws_instance.example
+  id = "i-abcd1234"
+}
+----------------------------------------------------------------
+
+2. Run below command to generate the configs
+   $terraform plan -generate-config-out=generated_resources.tf
+
+----------------------------------------------------------------
+
+3. Create a new file main.tf & copy required contents of generated_resources.tf to main.tf
+   then delete import.tf & generated_resources.tf
+
+4. Finally run below command to import the resource from AWS.
+   $terraform import aws_instance.webapp i-09d759d2c86992353
+
+----------------------------------------------------------------
+
+Output:
+--------------------------------------------------------------------------------------------------------------------|
+[ec2-user@ip-172-31-93-146 import_block]$ terraform import aws_instance.webapp i-09d759d2c86992353                  |
+aws_instance.webapp: Importing from ID "i-09d759d2c86992353"...
+aws_instance.webapp: Import prepared!
+  Prepared aws_instance for import
+aws_instance.webapp: Refreshing state... [id=i-09d759d2c86992353]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+-----------------------------------------------------------------------------------------------------------------------
